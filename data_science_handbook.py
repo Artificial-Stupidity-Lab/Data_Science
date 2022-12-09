@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 # Python code
 """ result = 0
 for i in range(10):
@@ -31,10 +32,20 @@ print(arr1) #[5 1 3 7] """
 arr1[1,1] = 11
 print(arr1) # second row = [3,11,8] """
 
-name = ['Alice', 'Bob', 'Cathy', 'Doug']
+""" name = ['Alice', 'Bob', 'Cathy', 'Doug']
 age = [25, 45, 37, 19]
 weight = [55.0, 85.5, 68.0, 61.5]
 data['name'] = name
 data['age'] = age
 data['weight'] = weight
-print(data)
+print(data) """
+
+fig, ax = plt.subplots()
+x = np.linspace(0, 20, 1000)
+ax.plot(x, np.cos(x))
+ax.axis('equal')
+ax.annotate('local maximum', xy=(6.28, 1), xytext=(10, 4), arrowprops=dict(facecolor='black', shrink=0.05))
+ax.annotate('local minimum', xy=(5 * np.pi, -1), xytext=(2, -6),
+arrowprops=dict(arrowstyle="->",
+connectionstyle="angle3,angleA=0,angleB=-90"))
+plt.show()
